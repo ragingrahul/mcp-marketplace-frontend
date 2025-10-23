@@ -28,6 +28,7 @@ export const API_ENDPOINTS = {
     balance: `${API_BASE_URL}/api/balance`,
     deposit: `${API_BASE_URL}/api/deposit/manual`,
   },
+  health: `${API_BASE_URL}/health`,
 } as const;
 
 /**
