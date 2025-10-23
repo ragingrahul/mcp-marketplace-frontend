@@ -5,16 +5,27 @@
 
 import { API_ENDPOINTS, HTTP_CONFIG } from "@/lib/api-config";
 
+export interface EndpointParameter {
+  name: string;
+  type: "string" | "number" | "boolean" | "object" | "array";
+  required: boolean;
+  description?: string;
+  default_value?: string;
+}
+
 export interface Endpoint {
   id: string;
   name: string;
   description?: string;
   url: string;
   method: string;
+  parameters?: EndpointParameter[];
+  headers?: Record<string, string>;
   user_id: string;
   created_at: string;
   updated_at: string;
   is_paid: boolean;
+  requires_payment?: boolean; // Backend sends this
   price_per_call_eth: string | null;
   developer_wallet_address: string | null;
 }

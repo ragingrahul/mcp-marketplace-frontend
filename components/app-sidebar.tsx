@@ -9,6 +9,7 @@ import {
   BookOpen,
   Settings2,
   Wallet,
+  DollarSign,
 } from "lucide-react";
 
 import { NavMain } from "@/components/nav-main";
@@ -29,21 +30,32 @@ const data = {
   developers: [
     {
       title: "My Endpoints",
-      url: "#",
+      url: "/dashboard/endpoints/manage",
       icon: Code2,
       isActive: true,
       items: [
         {
           title: "Create Endpoint",
-          url: "#",
+          url: "/dashboard/endpoints/create",
         },
         {
           title: "Manage Endpoints",
-          url: "#",
+          url: "/dashboard/endpoints/manage",
         },
         {
           title: "API Keys",
-          url: "#",
+          url: "/dashboard/endpoints/keys",
+        },
+      ],
+    },
+    {
+      title: "Pricing",
+      url: "/dashboard/pricing",
+      icon: DollarSign,
+      items: [
+        {
+          title: "Manage Pricing",
+          url: "/dashboard/pricing",
         },
       ],
     },
