@@ -16,6 +16,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Toolforge - MCP Marketplace",
   description: "Toolforge - Decentralized marketplace for MCP servers",
+  icons: {
+    icon: "/ToolForge.png",
+  },
 };
 
 export default function RootLayout({
