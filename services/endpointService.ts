@@ -49,6 +49,7 @@ export interface EndpointsResponse {
   success: boolean;
   endpoints: Endpoint[];
   count: number;
+  message?: string;
 }
 
 /**
