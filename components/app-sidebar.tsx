@@ -1,20 +1,18 @@
 "use client";
 
 import * as React from "react";
+import Link from "next/link";
 import {
-  BookOpen,
-  Bot,
+  Code2,
   Command,
-  Frame,
-  Map,
-  PieChart,
+  Store,
+  BookOpen,
   Settings2,
-  SquareTerminal,
+  Wallet,
 } from "lucide-react";
 
 import { NavMain } from "@/components/nav-main";
 import { NavProjects } from "@/components/nav-projects";
-import { NavSecondary } from "@/components/nav-secondary";
 import { NavUser } from "@/components/nav-user";
 import { WalletConnectButton } from "@/components/wallet-connect-button";
 import {
@@ -28,42 +26,23 @@ import {
 } from "@/components/ui/sidebar";
 
 const data = {
-  navMain: [
+  developers: [
     {
-      title: "Playground",
+      title: "My Endpoints",
       url: "#",
-      icon: SquareTerminal,
+      icon: Code2,
       isActive: true,
       items: [
         {
-          title: "History",
+          title: "Create Endpoint",
           url: "#",
         },
         {
-          title: "Starred",
+          title: "Manage Endpoints",
           url: "#",
         },
         {
-          title: "Settings",
-          url: "#",
-        },
-      ],
-    },
-    {
-      title: "Models",
-      url: "#",
-      icon: Bot,
-      items: [
-        {
-          title: "Genesis",
-          url: "#",
-        },
-        {
-          title: "Explorer",
-          url: "#",
-        },
-        {
-          title: "Quantum",
+          title: "API Keys",
           url: "#",
         },
       ],
@@ -74,34 +53,26 @@ const data = {
       icon: BookOpen,
       items: [
         {
-          title: "Introduction",
+          title: "Getting Started",
           url: "#",
         },
         {
-          title: "Get Started",
+          title: "API Reference",
           url: "#",
         },
         {
-          title: "Tutorials",
-          url: "#",
-        },
-        {
-          title: "Changelog",
+          title: "Examples",
           url: "#",
         },
       ],
     },
     {
-      title: "Settings",
+      title: "Developer Settings",
       url: "#",
       icon: Settings2,
       items: [
         {
-          title: "General",
-          url: "#",
-        },
-        {
-          title: "Team",
+          title: "Profile",
           url: "#",
         },
         {
@@ -109,28 +80,22 @@ const data = {
           url: "#",
         },
         {
-          title: "Limits",
+          title: "Analytics",
           url: "#",
         },
       ],
     },
   ],
-  navSecondary: [],
-  projects: [
+  consumers: [
     {
-      name: "Design Engineering",
-      url: "#",
-      icon: Frame,
+      name: "Browse Marketplace",
+      url: "/dashboard",
+      icon: Store,
     },
     {
-      name: "Sales & Marketing",
-      url: "#",
-      icon: PieChart,
-    },
-    {
-      name: "Travel",
-      url: "#",
-      icon: Map,
+      name: "My Wallet",
+      url: "/dashboard/wallet",
+      icon: Wallet,
     },
   ],
 };
@@ -142,7 +107,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         <SidebarMenu>
           <SidebarMenuItem>
             <SidebarMenuButton size="lg" asChild>
-              <a href="#">
+              <Link href="/dashboard">
                 <div className="bg-sidebar-primary text-sidebar-primary-foreground flex aspect-square size-8 items-center justify-center rounded-lg">
                   <Command className="size-4" />
                 </div>
@@ -150,15 +115,14 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                   <span className="truncate font-medium">Toolforge</span>
                   <span className="truncate text-xs">MCP Marketplace</span>
                 </div>
-              </a>
+              </Link>
             </SidebarMenuButton>
           </SidebarMenuItem>
         </SidebarMenu>
       </SidebarHeader>
       <SidebarContent>
-        <NavMain items={data.navMain} />
-        <NavProjects projects={data.projects} />
-        <NavSecondary items={data.navSecondary} className="mt-auto" />
+        <NavMain items={data.developers} />
+        <NavProjects projects={data.consumers} />
       </SidebarContent>
       <SidebarFooter>
         <div className="px-2 pb-2">

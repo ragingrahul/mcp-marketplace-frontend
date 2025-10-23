@@ -26,7 +26,7 @@ export const API_ENDPOINTS = {
   },
   payment: {
     balance: `${API_BASE_URL}/api/balance`,
-    deposit: `${API_BASE_URL}/api/deposit`,
+    deposit: `${API_BASE_URL}/api/deposit/manual`,
   },
 } as const;
 
