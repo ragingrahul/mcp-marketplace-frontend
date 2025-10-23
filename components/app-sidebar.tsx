@@ -2,15 +2,7 @@
 
 import * as React from "react";
 import Link from "next/link";
-import {
-  Code2,
-  Command,
-  Store,
-  BookOpen,
-  Settings2,
-  Wallet,
-  DollarSign,
-} from "lucide-react";
+import { Code2, Command, Store, Wallet, DollarSign } from "lucide-react";
 
 import { NavMain } from "@/components/nav-main";
 import { NavProjects } from "@/components/nav-projects";
@@ -42,10 +34,6 @@ const data = {
           title: "Manage Endpoints",
           url: "/dashboard/endpoints/manage",
         },
-        {
-          title: "API Keys",
-          url: "/dashboard/endpoints/keys",
-        },
       ],
     },
     {
@@ -56,44 +44,6 @@ const data = {
         {
           title: "Manage Pricing",
           url: "/dashboard/pricing",
-        },
-      ],
-    },
-    {
-      title: "Documentation",
-      url: "#",
-      icon: BookOpen,
-      items: [
-        {
-          title: "Getting Started",
-          url: "#",
-        },
-        {
-          title: "API Reference",
-          url: "#",
-        },
-        {
-          title: "Examples",
-          url: "#",
-        },
-      ],
-    },
-    {
-      title: "Developer Settings",
-      url: "#",
-      icon: Settings2,
-      items: [
-        {
-          title: "Profile",
-          url: "#",
-        },
-        {
-          title: "Billing",
-          url: "#",
-        },
-        {
-          title: "Analytics",
-          url: "#",
         },
       ],
     },
